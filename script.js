@@ -4,16 +4,23 @@ const CARDS_KEYS = Object.keys(CardsHints);
 
 localStorage.getItem("score") === null && localStorage.setItem("score", JSON.stringify([]));
 
-let Score = JSON.parse(localStorage.getItem("score")).length;
+document.getElementById("score").innerText = "Cards guessed :  " + JSON.parse(localStorage.getItem("score")).length;
+
 let HintHeader = null;
 let AnswerHeader = null;
 let SelectedCard = null;
 let Hint = "";
 let Lang = "en";
 
-const changeLang = (btn_element) => {
-  Lang === "en" ? (Lang = "ar") : (Lang = "en");
-  btn_element.innerText = Lang === "en" ? "Arabic" : "English";
+const changeLanguage = (btn_element) => {
+  if (Lang === "en") {
+    Lang = "ar";
+    btn_element.innerText = "English";
+  } else {
+    Lang = "en";
+    btn_element.innerText = "Arabic";
+  }
+  console.log(Lang);
 };
 
 const pickRandomCardHint = () => {
@@ -27,7 +34,7 @@ const pickRandomCardHint = () => {
   const RandomKey = Math.floor(Math.random() * CARDS_KEYS.length);
   Hint = CardsHints[CARDS_KEYS[RandomKey]][Lang];
   // display hint to user
-  Hint = CardsHints["2_clubs"].en;
+  Hint = CardsHints["2_clubs"].en; // for testing only and to be deleted
   HintHeader.innerText = "Hint: " + Hint;
 };
 
@@ -47,12 +54,15 @@ const cardSelected = (card) => {
     if (!PreviousGuessedCards.includes(card.id)) {
       PreviousGuessedCards.push(card.id);
       localStorage.setItem("score", JSON.stringify(PreviousGuessedCards));
-      Score += 1;
+      document.getElementById("score").innerText =
+        "Cards guessed : " + PreviousGuessedCards.length;
     }
     card.className = "right-card";
+    AnswerHeader.className = "right-answer";
     AnswerHeader.innerText = "Correct Card !";
   } else {
     card.className = "wrong-card";
+    AnswerHeader.className = "wrong-answer";
     AnswerHeader.innerText = "Wrong Card !";
   }
   // remove selection style from the previous selected card if any
@@ -81,7 +91,7 @@ const Game = () => {
   const LangBtn = document.getElementById("change-lang-btn");
   const ChangeCardBtn = document.getElementById("change-card-btn");
 
-  LangBtn.addEventListener("click", (e) => changeLang(e.target));
+  LangBtn.addEventListener("click", (e) => changeLanguage(e.target));
   ChangeCardBtn.addEventListener("click", pickRandomCardHint);
 };
 
