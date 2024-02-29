@@ -2,9 +2,8 @@ import CardsHints from "./hints.js";
 
 const CARDS_KEYS = Object.keys(CardsHints);
 
-localStorage.getItem("score") === null && localStorage.setItem("score", JSON.stringify([]));
-
-document.getElementById("score").innerText = "Cards guessed :  " + JSON.parse(localStorage.getItem("score")).length;
+localStorage.getItem("score") === null &&
+  localStorage.setItem("score", JSON.stringify([]));
 
 let HintHeader = null;
 let AnswerHeader = null;
@@ -54,8 +53,7 @@ const cardSelected = (card) => {
     if (!PreviousGuessedCards.includes(card.id)) {
       PreviousGuessedCards.push(card.id);
       localStorage.setItem("score", JSON.stringify(PreviousGuessedCards));
-      document.getElementById("score").innerText =
-        "Cards guessed : " + PreviousGuessedCards.length;
+      document.getElementById("score").innerText = PreviousGuessedCards.length;
     }
     card.className = "right-card";
     AnswerHeader.className = "right-answer";
@@ -87,6 +85,10 @@ const Game = () => {
 
   pickRandomCardHint();
   cardSelectionListen();
+
+  // set initial score which is the number of previous correctly guessed cards stored in localstorage
+  const ScoreSpan = document.getElementById("score");
+  ScoreSpan.innerText = JSON.parse(localStorage.getItem("score")).length;
 
   const LangBtn = document.getElementById("change-lang-btn");
   const ChangeCardBtn = document.getElementById("change-card-btn");
