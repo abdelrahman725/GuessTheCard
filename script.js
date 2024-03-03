@@ -1,7 +1,5 @@
 import CardsHints from "./hints.js";
 
-const CARDS_KEYS = Object.keys(CardsHints);
-
 localStorage.getItem("score") === null &&
   localStorage.setItem("score", JSON.stringify([]));
 
@@ -19,7 +17,6 @@ const changeLanguage = (btn_element) => {
     Lang = "en";
     btn_element.innerText = "Arabic";
   }
-  console.log(Lang);
 };
 
 const pickRandomCardHint = () => {
@@ -30,8 +27,14 @@ const pickRandomCardHint = () => {
   AnswerHeader.innerText = "";
   SelectedCard = null;
 
-  const RandomKey = Math.floor(Math.random() * CARDS_KEYS.length);
-  Hint = CardsHints[CARDS_KEYS[RandomKey]][Lang];
+  const AllCards = Object.keys(CardsHints);
+  const GuessedCards = JSON.parse(localStorage.getItem("score"));
+  const NotGuessedCards = AllCards.filter(
+    (card) => !GuessedCards.includes(card)
+  );
+
+  const RandomIndex = Math.floor(Math.random() * NotGuessedCards.length);
+  Hint = CardsHints[NotGuessedCards[RandomIndex]][Lang];
   // display hint to user
   Hint = CardsHints["2_clubs"].en; // for testing only and to be deleted
   HintHeader.innerText = "Hint: " + Hint;
@@ -46,14 +49,14 @@ const cardSelected = (card) => {
   }
 
   if (CardsHints[card.id][Lang] === Hint) {
-    const PreviousGuessedCards = JSON.parse(localStorage.getItem("score"));
+    const GuessedCards = JSON.parse(localStorage.getItem("score"));
 
-    // check if the same card was previously correctly guessed, in this case, we shouldn't increment the score
-    // otherwise (new correct card) we should update the score in the local storage
-    if (!PreviousGuessedCards.includes(card.id)) {
-      PreviousGuessedCards.push(card.id);
-      localStorage.setItem("score", JSON.stringify(PreviousGuessedCards));
-      document.getElementById("score").innerText = PreviousGuessedCards.length;
+    // check if the same card was previously guessed correctly, in this case, we shouldn't increment the score
+    // otherwise (new correct card) we should update the score
+    if (!GuessedCards.includes(card.id)) {
+      GuessedCards.push(card.id);
+      localStorage.setItem("score", JSON.stringify(GuessedCards));
+      document.getElementById("score").innerText = GuessedCards.length;
     }
     card.className = "right-card";
     AnswerHeader.className = "right-answer";
