@@ -24,7 +24,6 @@ html {
 
 button {
     border: 0;
-    outline: 0;
     cursor: pointer;
     color: rgb(60, 66, 87);
     background-color: rgb(255, 255, 255);
