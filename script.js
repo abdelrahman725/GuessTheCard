@@ -6,7 +6,7 @@ localStorage.getItem("score") === null &&
 let HintHeader = null;
 let AnswerHeader = null;
 let SelectedCard = null;
-let Hint = "";
+let Hint = null;
 let Lang = "en";
 
 const changeLanguage = (btn_element) => {
@@ -17,6 +17,13 @@ const changeLanguage = (btn_element) => {
     Lang = "en";
     btn_element.innerText = "Arabic";
   }
+  // show the same card hint with the new lang
+  displayHint();
+};
+
+const displayHint = () => {
+  Hint = CardsHints["2_clubs"]; // for testing only and to be deleted
+  HintHeader.innerText = "Hint: " + Hint[Lang];
 };
 
 const pickRandomCardHint = () => {
@@ -34,10 +41,9 @@ const pickRandomCardHint = () => {
   );
 
   const RandomIndex = Math.floor(Math.random() * NotGuessedCards.length);
-  Hint = CardsHints[NotGuessedCards[RandomIndex]][Lang];
-  // display hint to user
-  Hint = CardsHints["2_clubs"].en; // for testing only and to be deleted
-  HintHeader.innerText = "Hint: " + Hint;
+  Hint = CardsHints[NotGuessedCards[RandomIndex]];
+
+  displayHint();
 };
 
 const cardSelected = (card) => {
@@ -48,7 +54,7 @@ const cardSelected = (card) => {
     return;
   }
 
-  if (CardsHints[card.id][Lang] === Hint) {
+  if (CardsHints[card.id][Lang] === Hint[Lang]) {
     const GuessedCards = JSON.parse(localStorage.getItem("score"));
 
     // check if the same card was previously guessed correctly, in this case, we shouldn't increment the score
