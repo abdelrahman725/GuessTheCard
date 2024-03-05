@@ -22,18 +22,11 @@ const changeLanguage = (btn_element) => {
 };
 
 const displayHint = () => {
-  Hint = CardsHints["2_clubs"]; // for testing only and to be deleted
+  Hint = CardsHints["5_clubs"]; // for testing only and to be deleted
   HintHeader.innerText = "Hint: " + Hint[Lang];
 };
 
 const pickRandomCardHint = () => {
-  // UnSelect previous card
-  if (SelectedCard) {
-    SelectedCard.className = "";
-  }
-  AnswerHeader.innerText = "";
-  SelectedCard = null;
-
   const AllCards = Object.keys(CardsHints);
   const GuessedCards = JSON.parse(localStorage.getItem("score"));
   const NotGuessedCards = AllCards.filter(
@@ -42,14 +35,25 @@ const pickRandomCardHint = () => {
 
   const RandomIndex = Math.floor(Math.random() * NotGuessedCards.length);
   Hint = CardsHints[NotGuessedCards[RandomIndex]];
-
   displayHint();
 };
 
-const cardSelected = (card) => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+const changeHint = () => {
+  // UnSelect previous card
+  if (SelectedCard) {
+    SelectedCard.className = "";
+  }
+  AnswerHeader.innerText = "";
+  SelectedCard = null;
+  Hint = null;
+  HintHeader.innerText = "Hint: " + "...";
+  setTimeout(pickRandomCardHint, 500);
+};
 
-  // do nothing if user clicks again on the card
+const cardSelected = (card) => {
+  if (Hint === null) return;
+
+  // do nothing if user clicks again on the same card
   if (SelectedCard && SelectedCard === card) {
     return;
   }
@@ -103,7 +107,7 @@ const Game = () => {
   const ChangeCardBtn = document.getElementById("change-card-btn");
 
   LangBtn.addEventListener("click", (e) => changeLanguage(e.target));
-  ChangeCardBtn.addEventListener("click", pickRandomCardHint);
+  ChangeCardBtn.addEventListener("click", changeHint);
 };
 
 document.addEventListener("DOMContentLoaded", Game);
