@@ -6,19 +6,44 @@ html {
     text-align: center;
 }
 
-.title {
+.title-container,
+.creator {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .title-container {
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
+h1 {
+    margin: 0px;
+}
+
+.creator {
+    margin-bottom: 40px;
+}
+
+.creator-name {
+    opacity: 70%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    width: 30px;
+}
+
+.fa-github,
 .heart-symbol {
-    font-size: larger;
+    font-size: 30px;
+    margin-left: 3px;
+}
+
+
+.heart-symbol {
     color: rgb(197, 44, 44);
 }
 
@@ -29,7 +54,6 @@ button {
     background-color: rgb(255, 255, 255);
     box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
     border-radius: 4px;
-    font-size: 15px;
     padding: 4px 8px;
     transition: background-color .24s, box-shadow .24s;
 
@@ -86,7 +110,7 @@ button {
 }
 
 img {
-    /* height * 0.7 = width */
+    /* width = height * 0.7 */
     margin: 5px;
     width: 105px;
     height: 150px;
