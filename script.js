@@ -22,7 +22,6 @@ const changeLanguage = (btn_element) => {
 };
 
 const displayHint = () => {
-  Hint = CardsHints["5_clubs"]; // for testing only and to be deleted
   HintHeader.innerText = "Hint: " + Hint[Lang];
 };
 
