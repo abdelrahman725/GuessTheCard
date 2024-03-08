@@ -22,7 +22,7 @@ const changeLanguage = (btn_element) => {
 };
 
 const displayHint = () => {
-  HintHeader.innerText = "Hint: " + Hint[Lang];
+  HintHeader.innerHTML = "<strong>Hint:</strong> " + Hint[Lang];
 };
 
 const pickRandomCardHint = () => {
@@ -45,7 +45,7 @@ const changeHint = () => {
   AnswerHeader.innerText = "";
   SelectedCard = null;
   Hint = null;
-  HintHeader.innerText = "Hint: " + "...";
+  HintHeader.innerHTML = "----";
   setTimeout(pickRandomCardHint, 500);
 };
 
