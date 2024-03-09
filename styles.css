@@ -6,6 +6,26 @@ html {
     text-align: center;
 }
 
+button {
+    border: 0;
+    cursor: pointer;
+    color: rgb(60, 66, 87);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: large;
+    transition: background-color .24s, box-shadow .24s;
+
+    &:hover {
+        box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 3px 9px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+    }
+
+    &:active {
+        filter: brightness(90%);
+    }
+}
+
 .title-container,
 .creator {
     display: flex;
@@ -20,7 +40,7 @@ html {
 
 #change-lang-btn {
     width: 57px;
-    font-size: 13px;
+    font-size: small;
     margin-right: 8px;
 }
 
@@ -57,33 +77,10 @@ a {
     color: rgb(197, 44, 44);
 }
 
-button {
-    border: 0;
-    cursor: pointer;
-    color: rgb(60, 66, 87);
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
-    border-radius: 4px;
-    padding: 4px 8px;
-    transition: background-color .24s, box-shadow .24s;
 
-    &:hover {
-        box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 3px 9px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
-    }
-
-    &:active {
-        filter: brightness(90%);
-    }
-}
-
-#change-card-btn {
-    font-size: large;
-}
-
-#hint,
-#answer {
-    margin-bottom: 35px;
-    height: 20px;
+.info-container {
+    height: 150px;
+    /* margin-bottom: 20px; */
 }
 
 #hint {
