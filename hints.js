@@ -2,7 +2,7 @@
 // ar: Arabic hint
 
 const CardsHints = {
-  "1_clubs": { en: "----", ar: "----" },
+  "1_clubs": { en: "I start with the 3rd", ar: "----" },
   "2_clubs": {
     en: `How many rules say "do not talk about Fight Club"`,
     ar: "أريد فدانين من الأرض لزراعتها",
@@ -17,7 +17,7 @@ const CardsHints = {
     ar: "----",
   },
   "6_clubs": {
-    en: "I threw the dice hoping for luck !",
+    en: "Throwing the dice hoping for luck !",
     ar: "----",
   },
   "7_clubs": {
@@ -29,28 +29,40 @@ const CardsHints = {
     en: "Every leaf represents a month of human pregnancy",
     ar: "----",
   },
-  "10_clubs": { en: "----", ar: "----" },
-  "1_spades": { en: "----", ar: "----" },
-  "2_spades": { en: "----", ar: "أحتاج زوج من الأسلحة للحرب" },
-  "3_spades": { en: "The primary colors painted the sword", ar: "----" },
-  "4_spades": { en: "----", ar: "----" },
+  "10_clubs": {
+    en: "Do you want to join? also you don't have to repeat English vowels, we know you are smart!",
+    ar: "----",
+  },
+  "1_spades": { en: "My second is the 16th", ar: "----" },
+  "2_spades": {
+    en: "Some people say that i resemble a swan and can rhyme with snakes",
+    ar: "أحتاج زوج من الأسلحة للحرب",
+  },
+  "3_spades": { en: "The primary colors painted a spear", ar: "----" },
+  "4_spades": {
+    en: "These cards suits start with the 19th",
+    ar: "----",
+  },
   "5_spades": { en: "Use your hand fingers as a weapon", ar: "----" },
   "6_spades": {
     en: "The workers need half-dozen of digging tools",
     ar: "----",
   },
   "7_spades": {
-    en: "A week long of black cards which are not leaves",
+    en: "It's a week long, it's doesn't have feelings, it is not precious and you won't find it on a tree",
     ar: "----",
   },
   "8_spades": {
     en: "The spider turned the black-painted hearts upside down",
     ar: "----",
   },
-  "9_spades": { en: "I seee a soldier playing Sudoku", ar: "----" },
+  "9_spades": { en: "We see soldier playing Sudoku", ar: "----" },
   "10_spades": { en: "The army spent a decade fighting", ar: "----" },
   "1_diamonds": { en: "During mining it was the first", ar: "----" },
-  "2_diamonds": { en: "----", ar: "التاجر" },
+  "2_diamonds": {
+    en: "The twin stole it to get rich",
+    ar: "التاجر",
+  },
   "3_diamonds": {
     en: "This Trilogy is expensive, brilliant and hard",
     ar: "----",
@@ -65,10 +77,10 @@ const CardsHints = {
   },
   "6_diamonds": { en: "The Treasure chest is hexagon-shaped", ar: "----" },
   "7_diamonds": {
-    en: "I sparkle and refracts light into a rainbow of colors",
+    en: "It sparkles and refracts light into a rainbow of colors",
     ar: "----",
   },
-  "8_diamonds": { en: "I keep my Jewelry in a sand clock", ar: "----" },
+  "8_diamonds": { en: "keep your Jewelry in a sand clock", ar: "----" },
   "9_diamonds": {
     en: "A number of high-cost rings were gifted to the race of men",
     ar: "التاجرة حامل في طفل",
@@ -80,20 +92,23 @@ const CardsHints = {
     ar: "----",
   },
   "1_hearts": { en: "I can be broken, but not repaired with glue", ar: "----" },
-  "2_hearts": { en: "----", ar: "زوج من ." },
+  "2_hearts": {
+    en: "The tireless pump worker is hanged on a hanger",
+    ar: "زوج من .",
+  },
   "3_hearts": { en: "Love Triangle", ar: "----" },
   "4_hearts": { en: "All year seasons have emotions", ar: "----" },
   "5_hearts": {
-    en: "English vowels have feelings too!",
+    en: "English vowels can ryhme with dart",
     ar: "وضعت يدي علي قلبي",
   },
   "6_hearts": { en: "Bees are making love in Honeycomb", ar: "----" },
   "7_hearts": {
-    en: "I love the wonders of the world",
+    en: "We love the wonders of the world",
     ar: "أنا أحب عجائب الدنيا",
   },
   "8_hearts": {
-    en: "An Octopus once said : I am constantly in motion, yet I never move from my place",
+    en: "An Octopus once said : it is constantly in motion, yet it never move from its place",
     ar: "----",
   },
   "9_hearts": {
@@ -101,7 +116,7 @@ const CardsHints = {
     ar: "----",
   },
   "10_hearts": {
-    en: "I'm blood red but also the start of a table, middle of a leg and the end of fun",
+    en: "Blood red but also the start of a table, middle of a leg and the end of fun",
     ar: "----",
   },
   king_clubs: { en: "----", ar: "----" },
