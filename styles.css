@@ -115,12 +115,15 @@ a {
 
 .suits-names p {
     font-size: larger;
-    margin-right: 20px;
-    margin: 0px 20px 5px 0px;
+    margin: 0px 10px 5px 10px;
 }
 
 .suits-name p:last-child {
     margin-right: 0px;
+}
+
+.suits-name p:first-child {
+    margin-left: 0px;
 }
 
 .diamonds span,
