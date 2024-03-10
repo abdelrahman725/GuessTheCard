@@ -113,23 +113,23 @@ button {
     margin-right: auto;
     flex-wrap: wrap;
 
-    p {
-        margin: 0px 12px 5px 12px;
-        font-size: larger;
-    }
-
-    p:last-child {
-        margin-right: 0px;
-    }
-
-    p:first-child {
-        margin-left: 0px;
-    }
-
     .diamonds span,
     .heart span {
         color: #df1e00
     }
+}
+
+.suits-names p {
+    font-size: larger;
+    margin: 0px 15px 5px 15px;
+}
+
+.suits-name p:last-child {
+    margin-right: 0px;
+}
+
+.suits-names :first-child {
+    margin-left: 0px;
 }
 
 
