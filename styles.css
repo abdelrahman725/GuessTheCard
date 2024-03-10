@@ -37,56 +37,55 @@ button {
 .title-container {
     margin-top: 30px;
     flex-wrap: wrap;
-
-    h1 {
-        margin: 0px;
-    }
-
-    .hidden {
-        width: 57px;
-    }
-
-    #change-lang-btn {
-        width: 57px;
-        font-size: small;
-        margin-right: 8px;
-    }
-
 }
 
-.creator-container {
-
-    .creator {
-        margin-bottom: 40px;
-    }
-
-    .creator-name {
-        opacity: 70%;
-    }
-
-    .title-heart {
-        color: rgb(197, 44, 44);
-    }
-
-    .fa-github,
-    .title-heart {
-        font-size: 30px;
-        margin-left: 3px;
-    }
-
-    a {
-        color: black;
-        text-decoration: none;
-        width: 30px;
-    }
+#change-lang-btn {
+    width: 57px;
+    font-size: small;
+    margin-right: 8px;
 }
+
+h1 {
+    margin: 0px;
+}
+
+.hidden {
+    width: 57px;
+}
+
+.creator {
+    margin-bottom: 40px;
+}
+
+.creator-name {
+    opacity: 70%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    width: 30px;
+}
+
+.fa-github,
+.title-heart {
+    font-size: 30px;
+    margin-left: 3px;
+}
+
+
+.title-heart {
+    color: rgb(197, 44, 44);
+}
+
 
 .info-container {
     height: 170px;
+}
 
-    #hint {
-        font-size: large;
-    }
+#hint {
+    margin-top: 10px;
+    font-size: large;
 }
 
 .right-answer {
@@ -112,26 +111,22 @@ button {
     margin-left: auto;
     margin-right: auto;
     flex-wrap: wrap;
-
-    .diamonds span,
-    .heart span {
-        color: #df1e00
-    }
 }
 
 .suits-names p {
     font-size: larger;
-    margin: 0px 15px 5px 15px;
+    margin-right: 20px;
+    margin: 0px 20px 5px 0px;
 }
 
 .suits-name p:last-child {
     margin-right: 0px;
 }
 
-.suits-names :first-child {
-    margin-left: 0px;
+.diamonds span,
+.heart span {
+    color: #df1e00
 }
-
 
 .right-card {
     box-shadow: 0 0 0 3px rgb(30, 181, 30);
