@@ -27,7 +27,8 @@ button {
 }
 
 .title-container,
-.creator {
+.creator-container,
+.suits-names {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,24 +68,31 @@ a {
 }
 
 .fa-github,
-.heart-symbol {
+.title-heart {
     font-size: 30px;
     margin-left: 3px;
 }
 
 
-.heart-symbol {
+.title-heart {
     color: rgb(197, 44, 44);
 }
 
 
 .info-container {
-    height: 150px;
-    /* margin-bottom: 20px; */
+    height: 170px;
 }
 
 #hint {
     font-size: large;
+}
+
+.right-answer {
+    color: rgb(30, 181, 30);
+}
+
+.wrong-answer {
+    color: red;
 }
 
 /* prevent cards selection for convenience*/
@@ -98,12 +106,20 @@ a {
     margin-bottom: 50px;
 }
 
-.right-answer {
-    color: rgb(30, 181, 30);
+.suits-names {
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+
+    p {
+        margin: 0px 7px 7px 7px;
+        font-size: larger;
+    }
 }
 
-.wrong-answer {
-    color: red;
+.diamonds span,
+.heart span {
+    color: #df1e00
 }
 
 .right-card {
