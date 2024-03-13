@@ -10,6 +10,7 @@ let Hint = null;
 let Lang = "en";
 
 const changeLanguage = (btn_element) => {
+  return
   if (Lang === "en") {
     Lang = "ar";
     btn_element.innerText = "English";
