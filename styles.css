@@ -111,11 +111,12 @@ a {
     margin-left: auto;
     margin-right: auto;
     flex-wrap: wrap;
+    height: 25px;
 }
 
 .suits-names p {
     font-size: larger;
-    margin: 0px 10px 5px 10px;
+    margin: 0px 10px 0px 10px;
 }
 
 .suits-name p:last-child {
@@ -126,8 +127,8 @@ a {
     margin-left: 0px;
 }
 
-.diamonds span,
-.heart span {
+.diamonds span:first-child,
+.heart span:first-child {
     color: #df1e00
 }
 

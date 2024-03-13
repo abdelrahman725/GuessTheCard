@@ -1,4 +1,4 @@
-import CardsHints from "./hints.js";
+import { CardsHints, SuitsLang } from "./helper.js";
 
 localStorage.getItem("score") === null &&
   localStorage.setItem("score", JSON.stringify([]));
@@ -17,8 +17,14 @@ const changeLanguage = (btn_element) => {
     Lang = "en";
     btn_element.innerText = "Arabic";
   }
+
   // show the same card hint with the new lang
   displayHint();
+
+  const Suits = document.querySelector(".suits-names").children;
+  Array.from(Suits).forEach((suit) => {
+    suit.children[1].textContent = SuitsLang[suit.className][Lang];
+  });
 };
 
 const displayHint = () => {
@@ -46,7 +52,7 @@ const changeHint = () => {
   SelectedCard = null;
   Hint = null;
   HintHeader.innerHTML = "----";
-  setTimeout(pickRandomCardHint, 500);
+  setTimeout(pickRandomCardHint, 250);
 };
 
 const cardSelected = (card) => {
