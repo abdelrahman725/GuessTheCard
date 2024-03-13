@@ -1,8 +1,8 @@
 // en: English hint
 // ar: Arabic hint
 
-const CardsHints = {
-  "1_clubs": { en: "I start with the 3rd", ar: "----" },
+export const CardsHints = {
+  "1_clubs": { en: "I won the race, I start with the 3rd", ar: "----" },
   "2_clubs": {
     en: `How many rules say "do not talk about Fight Club"`,
     ar: "أريد فدانين من الأرض لزراعتها",
@@ -147,4 +147,13 @@ const CardsHints = {
   black_joker: { en: "----", ar: "----" },
 };
 
-export default CardsHints;
+export const SuitsLang = {
+  // ♠
+  spades: { en: "spades", ar: "البستوني" },
+  // ♣
+  clubs: { en: "clubs", ar: "السباتي" },
+  // ♥
+  heart: { en: "heart", ar: "الكوبة" },
+  // ♦
+  diamonds: { en: "diamond", ar: "الديناري" },
+};
