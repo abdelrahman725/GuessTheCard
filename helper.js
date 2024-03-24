@@ -33,7 +33,7 @@ export const CardsHints = {
     en: "Do you want to join? also you don't have to repeat English vowels, we know you are smart!",
     ar: "----",
   },
-  "1_spades": { en: "My second is the 16th", ar: "----" },
+  "1_spades": { en: "I'm a big black rocket", ar: "----" },
   "2_spades": {
     en: "Some people say that i resemble a swan and can rhyme with snakes",
     ar: "أحتاج زوج من الأسلحة للحرب",
@@ -68,7 +68,7 @@ export const CardsHints = {
     ar: "----",
   },
   "4_diamonds": {
-    en: "Use the compass directions to find the Jewelry",
+    en: "Use the compass directions to find the stars !",
     ar: "----",
   },
   "5_diamonds": {
@@ -82,7 +82,7 @@ export const CardsHints = {
   },
   "8_diamonds": { en: "keep your Jewelry in a sand clock", ar: "----" },
   "9_diamonds": {
-    en: "A number of high-cost rings were gifted to the race of men",
+    en: "High-cost rings are gifted to all cards of suit/shape X, but there is one card punished",
     ar: "التاجرة حامل في طفل",
   },
   "10_diamonds": {
@@ -91,7 +91,7 @@ export const CardsHints = {
       "I write a Diary but tears the last two pages, I eat Almonds but spits the first two",
     ar: "----",
   },
-  "1_hearts": { en: "I can be broken, but not repaired with glue", ar: "----" },
+  "1_hearts": { en: "I have a letter, I can be broken but not repaired with glue", ar: "----" },
   "2_hearts": {
     en: "The tireless pump worker is hanged on a hanger",
     ar: "زوج من .",
@@ -125,7 +125,7 @@ export const CardsHints = {
     ar: "----",
   },
   king_diamonds: { en: "----", ar: "----" },
-  king_hearts: { en: "----", ar: "----" },
+  king_hearts: { en: "I hide my sword behind my head just in case", ar: "----" },
   jack_clubs: { en: "----", ar: "----" },
   jack_spades: { en: "The prince is in the Army !", ar: "! الأمير في الجيش" },
   jack_diamonds: { en: "----", ar: "----" },
@@ -144,7 +144,7 @@ export const CardsHints = {
     en: "I enjoy a chaotic brand of entertainment",
     ar: "----",
   },
-  black_joker: { en: "----", ar: "----" },
+  black_joker: { en: "I can't stop laughing even if life is not colourful", ar: "----" },
 };
 
 export const SuitsLang = {
