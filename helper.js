@@ -4,7 +4,7 @@
 export const CardsHints = {
   "1_clubs": { en: "I won the race, I start with the 3rd", ar: "----" },
   "2_clubs": {
-    en: `How many rules say "do not talk about Fight Club"`,
+    en: `How many rules say "do not talk about Fight Club" ?`,
     ar: "أريد فدانين من الأرض لزراعتها",
   },
   "3_clubs": {
@@ -40,7 +40,7 @@ export const CardsHints = {
   },
   "3_spades": { en: "The primary colors painted a spear", ar: "----" },
   "4_spades": {
-    en: "These cards suits start with the 19th",
+    en: "Out of all cards suits i'm the second suit",
     ar: "----",
   },
   "5_spades": { en: "Use your hand fingers as a weapon", ar: "----" },
@@ -56,7 +56,7 @@ export const CardsHints = {
     en: "The spider turned the black-painted hearts upside down",
     ar: "----",
   },
-  "9_spades": { en: "We see soldier playing Sudoku", ar: "----" },
+  "9_spades": { en: "I'm a soldier playing Sudoku", ar: "----" },
   "10_spades": { en: "The army spent a decade fighting", ar: "----" },
   "1_diamonds": { en: "During mining it was the first", ar: "----" },
   "2_diamonds": {
@@ -82,7 +82,7 @@ export const CardsHints = {
   },
   "8_diamonds": { en: "keep your Jewelry in a sand clock", ar: "----" },
   "9_diamonds": {
-    en: "High-cost rings are gifted to all cards of suit/shape X, But royal family and another card are punished",
+    en: "High-cost rings are gifted to all cards of that suit/symbol, but royal family and just another card are punished",
     ar: "التاجرة حامل في طفل",
   },
   "10_diamonds": {
@@ -148,7 +148,7 @@ export const CardsHints = {
     ar: "----",
   },
   jack_hearts: {
-    en: "Sacrificing their life for Rose! what a true love",
+    en: "Sacrificing his life for Rose! what a true love",
     ar: "----",
   },
   queen_clubs: { en: "3 merged circles are standing in a line", ar: "----" },
