@@ -4,7 +4,7 @@ if (localStorage.getItem("score") === null) {
   localStorage.setItem("score", JSON.stringify([]));
 }
 
-const test_complete_game_and_reset = () => {
+const testGameCompleteAndReset = () => {
   const array = [];
   for (let index = 0; index < AllCards.length - 1; index++) {
     array.push(AllCards[index]);
