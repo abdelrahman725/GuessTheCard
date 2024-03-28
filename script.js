@@ -1,4 +1,4 @@
-import { CardsHints, SuitsLang } from "./helper.js";
+import { CardsHints, SuitsLang } from "./data.js";
 
 if (localStorage.getItem("score") === null) {
   localStorage.setItem("score", JSON.stringify([]));
