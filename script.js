@@ -1,16 +1,29 @@
 import { CardsHints, SuitsLang } from "./helper.js";
 
-localStorage.getItem("score") === null &&
+if (localStorage.getItem("score") === null) {
   localStorage.setItem("score", JSON.stringify([]));
+}
+
+const test_complete_game_and_reset = () => {
+  const array = [];
+  for (let index = 0; index < AllCards.length - 1; index++) {
+    array.push(AllCards[index]);
+  }
+  localStorage.setItem("score", JSON.stringify(array));
+};
+
+const AllCards = Object.keys(CardsHints);
+const N_TotalCards = 54;
 
 let HintHeader = null;
 let AnswerHeader = null;
 let SelectedCard = null;
+let ScoreSpan = null;
 let Hint = null;
 let Lang = "en";
 
 const changeLanguage = (btn_element) => {
-  return
+  return;
   if (Lang === "en") {
     Lang = "ar";
     btn_element.innerText = "English";
@@ -19,7 +32,7 @@ const changeLanguage = (btn_element) => {
     btn_element.innerText = "Arabic";
   }
 
-  // show the same card hint with the new lang
+  // show the same card hint with current lang
   displayHint();
 
   const Suits = document.querySelector(".suits-names").children;
@@ -28,12 +41,36 @@ const changeLanguage = (btn_element) => {
   });
 };
 
+const resetGame = () => {
+  localStorage.setItem("score", JSON.stringify([]));
+  ScoreSpan.innerText = 0;
+  document.getElementById("change-card-btn").style.display = "inline-block";
+  document.getElementById("reset-game-btn").style.display = "none";
+  pickHint();
+};
+
+const allCardsGussed = () => {
+  document.getElementById("reset-game-btn").style.display = "inline-block";
+  document.getElementById("change-card-btn").style.display = "none";
+  AnswerHeader.className = "right-answer";
+  AnswerHeader.innerText = `Congratulations you have guessed all ${N_TotalCards} cards !`;
+  Hint = null;
+};
+
 const displayHint = () => {
   HintHeader.innerHTML = "<strong>Hint:</strong> " + Hint[Lang];
 };
 
-const pickRandomCardHint = () => {
-  const AllCards = Object.keys(CardsHints);
+// pick random hint for another/same un-guessed card
+const pickHint = () => {
+  if (SelectedCard) {
+    SelectedCard.className = "";
+  }
+  AnswerHeader.innerText = "";
+  SelectedCard = null; // UnSelect previous card
+  Hint = null;
+  HintHeader.innerHTML = "----";
+
   const GuessedCards = JSON.parse(localStorage.getItem("score"));
   const NotGuessedCards = AllCards.filter(
     (card) => !GuessedCards.includes(card)
@@ -41,19 +78,7 @@ const pickRandomCardHint = () => {
 
   const RandomIndex = Math.floor(Math.random() * NotGuessedCards.length);
   Hint = CardsHints[NotGuessedCards[RandomIndex]];
-  displayHint();
-};
-
-const changeHint = () => {
-  // UnSelect previous card
-  if (SelectedCard) {
-    SelectedCard.className = "";
-  }
-  AnswerHeader.innerText = "";
-  SelectedCard = null;
-  Hint = null;
-  HintHeader.innerHTML = "----";
-  setTimeout(pickRandomCardHint, 250);
+  setTimeout(displayHint, 250);
 };
 
 const cardSelected = (card) => {
@@ -76,7 +101,11 @@ const cardSelected = (card) => {
     }
     card.className = "right-card";
     AnswerHeader.className = "right-answer";
-    AnswerHeader.innerText = "Correct Card !";
+    if (GuessedCards.length === N_TotalCards) {
+      allCardsGussed();
+    } else {
+      AnswerHeader.innerText = "Correct Card !";
+    }
   } else {
     card.className = "wrong-card";
     AnswerHeader.className = "wrong-answer";
@@ -99,21 +128,32 @@ const cardSelectionListen = () => {
 };
 
 const Game = () => {
-  HintHeader = document.getElementById("hint");
+  const N_GuessedCards = JSON.parse(localStorage.getItem("score")).length;
+  const NextCardBtn = document.getElementById("change-card-btn");
+  const ResetGameBtn = document.getElementById("reset-game-btn");
+
   AnswerHeader = document.getElementById("answer");
+  HintHeader = document.getElementById("hint");
 
-  pickRandomCardHint();
+  if (N_GuessedCards === N_TotalCards) {
+    allCardsGussed();
+  } else {
+    pickHint();
+    NextCardBtn.style.display = "inline-block";
+  }
+
   cardSelectionListen();
+  NextCardBtn.addEventListener("click", pickHint);
+  ResetGameBtn.addEventListener("click", resetGame);
 
+  ScoreSpan = document.getElementById("score");
   // set initial score which is the number of previous correctly guessed cards stored in localstorage
-  const ScoreSpan = document.getElementById("score");
-  ScoreSpan.innerText = JSON.parse(localStorage.getItem("score")).length;
+  ScoreSpan.innerText = N_GuessedCards;
 
-  const LangBtn = document.getElementById("change-lang-btn");
-  const ChangeCardBtn = document.getElementById("change-card-btn");
-
-  LangBtn.addEventListener("click", (e) => changeLanguage(e.target));
-  ChangeCardBtn.addEventListener("click", changeHint);
+  // change language to arabic or vice versa
+  document
+    .getElementById("change-lang-btn")
+    .addEventListener("click", (e) => changeLanguage(e.target));
 };
 
 document.addEventListener("DOMContentLoaded", Game);

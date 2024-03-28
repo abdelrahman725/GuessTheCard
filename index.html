@@ -16,7 +16,7 @@
 <body>
     <div class="title-container">
         <button id="change-lang-btn" title="change language">Arabic</button>
-        <h1>Guess The card to test your creativity !</h1>
+        <h1>Cards puzzle</h1>
         <div class="hidden"></div>
     </div>
 
@@ -28,17 +28,20 @@
         </a>
     </div>
 
+    <p><strong>Note:</strong> No playing cards experience is required to guess the cards</p>
+
     <h2>Cards guessed: <span id="score"></span></h2>
 
     <div class="info-container">
-        <button id="change-card-btn">Change Card</button>
+        <button id="change-card-btn" hidden>Change Card</button>
+        <button id="reset-game-btn" hidden>Reset Game</button>
         <p id="hint"></p>
         <h4 id="answer"></h4>
     </div>
 
     <div class="suits-names">
-        <p class="spades"><span>♠</span><span>Spades</span></p>
         <p class="clubs"><span>♣</span><span>Clubs</span></p>
+        <p class="spades"><span>♠</span><span>Spades</span></p>
         <p class="heart"><span>♥</span><span>Heart</span></p>
         <p class="diamonds"><span>♦</span><span>Diamond</span></p>
     </div>
@@ -103,8 +106,8 @@
         <img src="cards/queen_of_diamonds.png" id="queen_diamonds" alt="" title="queen of diamonds">
         <img src="cards/queen_of_hearts.png" id="queen_hearts" alt="" title="queen of hearts">
 
-        <img src="cards/joker_black.png" id="colored_joker" alt="" title="black&white Joker ">
-        <img src="cards/joker_red.png" id="black_joker" alt="" title="colored Joker">
+        <img src="cards/joker_red.png" id="colored_joker" alt="" title="colored Joker">
+        <img src="cards/joker_black.png" id="black_joker" alt="" title="black&white Joker ">
     </div>
 
 </body>
