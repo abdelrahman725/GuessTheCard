@@ -82,7 +82,7 @@ export const CardsHints = {
   },
   "8_diamonds": { en: "keep your Jewelry in a sand clock", ar: "----" },
   "9_diamonds": {
-    en: "High-cost rings are gifted to all cards of suit/shape X, but there is one card punished",
+    en: "High-cost rings are gifted to all cards of suit/shape X, But royal family and another card are punished",
     ar: "التاجرة حامل في طفل",
   },
   "10_diamonds": {
@@ -91,7 +91,10 @@ export const CardsHints = {
       "I write a Diary but tears the last two pages, I eat Almonds but spits the first two",
     ar: "----",
   },
-  "1_hearts": { en: "I have a letter, I can be broken but not repaired with glue", ar: "----" },
+  "1_hearts": {
+    en: "I have a letter but i'm not from the royal family, I can be broken but not repaired with glue",
+    ar: "----",
+  },
   "2_hearts": {
     en: "The tireless pump worker is hanged on a hanger",
     ar: "زوج من .",
@@ -119,32 +122,56 @@ export const CardsHints = {
     en: "Blood red but also the start of a table, middle of a leg and the end of fun",
     ar: "----",
   },
-  king_clubs: { en: "----", ar: "----" },
+  king_clubs: {
+    en: "Potassium is thinking about the sound of the word Makeups",
+    ar: "----",
+  },
   king_spades: {
-    en: "Can Alice defeat the Undefeatable soldier ?",
+    en: "Normaly i don't engage in war battles, instead i give orders to my army",
     ar: "----",
   },
-  king_diamonds: { en: "----", ar: "----" },
-  king_hearts: { en: "I hide my sword behind my head just in case", ar: "----" },
-  jack_clubs: { en: "----", ar: "----" },
-  jack_spades: { en: "The prince is in the Army !", ar: "! الأمير في الجيش" },
-  jack_diamonds: { en: "----", ar: "----" },
+  king_diamonds: {
+    en: "I have the power and authority, I also have  a fortune !",
+    ar: "----",
+  },
+  king_hearts: {
+    en: "I hide my sword behind my head just in case",
+    ar: "----",
+  },
+  jack_clubs: {
+    en: "I have a yellow hair, my upper looks in the right direction, i don't believe in luck",
+    ar: "----",
+  },
+  jack_spades: { en: "The prince joined the Army !", ar: "! الأمير في الجيش" },
+  jack_diamonds: {
+    en: "I wear a synonym for coat without its two endings, an intense heat and pressure was applied to create me",
+    ar: "----",
+  },
   jack_hearts: {
-    en: "Alice can not see her own mark but she can see other's marks, she needs to trust at least one person",
+    en: "Sacrificing their life for Rose! what a true love",
     ar: "----",
   },
-  queen_clubs: { en: "----", ar: "----" },
-  queen_spades: { en: "----", ar: "----" },
-  queen_diamonds: { en: "----", ar: "----" },
+  queen_clubs: { en: "3 merged circles are standing in a line", ar: "----" },
+  queen_spades: {
+    en: "I'm a circle with a little inclined dash on my right, I end the same way as rides",
+    ar: "----",
+  },
+  queen_diamonds: {
+    en: "The mother of all bees was found deep underground, hidden but valuable.",
+    ar: "----",
+  },
   queen_hearts: {
-    en: "Can Alice know the truth behind this world ?",
+    en: "I'm married to the man with swords, i have a flower in my upper left hand and another one in my lower left hand",
     ar: "----",
   },
   colored_joker: {
     en: "I enjoy a chaotic brand of entertainment",
     ar: "----",
   },
-  black_joker: { en: "I can't stop laughing even if life is not colourful", ar: "----" },
+  black_joker: {
+    en: "Even while life is not colourful, i can't stop laughing",
+    ar: "----",
+  },
 };
 
 export const SuitsLang = {
