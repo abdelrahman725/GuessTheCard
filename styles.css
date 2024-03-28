@@ -142,9 +142,9 @@ a {
 
 img {
     /* width = height * 0.7 */
-    margin: 5px;
-    width: 105px;
-    height: 150px;
+    margin: 10px;
+    width: 80px;
+    height: 115px;
     position: relative;
     border-radius: 5px;
     box-shadow: 0.5px 0.5px 1px 0.1px grey;
@@ -158,12 +158,6 @@ img {
     }
 }
 
-@media screen and (max-width: 600px) {
-    img {
-        width: 77px;
-        height: 110px;
-    }
-}
 
 @media screen and (max-width: 420px) {
     .title-container {
