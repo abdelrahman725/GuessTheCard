@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guess the card through creative hints, can you guess all 52 cards ?">
+    <meta property="og:image" content="imgs/preview.png">
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="imgs/spades.png">
+</head>
+
+<body>
+    <div class="title-container">
+        <button id="change-lang-btn" title="change language">Arabic</button>
+        <h1>Guess the Card</h1>
+        <div class="hidden"></div>
+    </div>
+
+    <div class="creator-container">
+        <span class="creator-name">created with love by Bedo</span>
+        <span class="title-heart">&#10084;</span>
+        <a href="https://github.com/abdelrahman725/GuessTheCard" target="_blank">
+            <i class="fa fa-github" style="font-size:24px"></i>
+        </a>
+    </div>
+
+    <p><strong>Note:</strong> No playing cards experience is required to guess the cards</p>
+
+    <h2>Cards guessed: <span id="score"></span></h2>
+
+    <div class="info-container">
+        <button id="change-card-btn" hidden>Change Card</button>
+        <button id="reset-game-btn" hidden>Reset Game</button>
+        <p id="hint"></p>
+        <h4 id="answer"></h4>
+    </div>
+
+    <div class="suits-names">
+        <p class="clubs"><span>♣</span><span>Clubs</span></p>
+        <p class="spades"><span>♠</span><span>Spades</span></p>
+        <p class="heart"><span>♥</span><span>Heart</span></p>
+        <p class="diamonds"><span>♦</span><span>Diamond</span></p>
+    </div>
+
+    <div class="cards-container">
+        <img src="cards/ace_of_clubs.png" id="1_clubs" alt="" title="Ace of clubs">
+        <img src="cards/2_of_clubs.png" id="2_clubs" alt="" title="2 of clubs">
+        <img src="cards/3_of_clubs.png" id="3_clubs" alt="" title="3 of clubs">
+        <img src="cards/4_of_clubs.png" id="4_clubs" alt="" title="4 of clubs">
+        <img src="cards/5_of_clubs.png" id="5_clubs" alt="" title="5 of clubs">
+        <img src="cards/6_of_clubs.png" id="6_clubs" alt="" title="6 of clubs">
+        <img src="cards/7_of_clubs.png" id="7_clubs" alt="" title="7 of clubs">
+        <img src="cards/8_of_clubs.png" id="8_clubs" alt="" title="8 of clubs">
+        <img src="cards/9_of_clubs.png" id="9_clubs" alt="" title="9 of clubs">
+        <img src="cards/10_of_clubs.png" id="10_clubs" alt="" title="10 of clubs">
+
+        <img src="cards/ace_of_spades.png" id="1_spades" alt="" title="Ace of spades">
+        <img src="cards/2_of_spades.png" id="2_spades" alt="" title="2 of spades">
+        <img src="cards/3_of_spades.png" id="3_spades" alt="" title="3 of spades">
+        <img src="cards/4_of_spades.png" id="4_spades" alt="" title="4 of spades">
+        <img src="cards/5_of_spades.png" id="5_spades" alt="" title="5 of spades">
+        <img src="cards/6_of_spades.png" id="6_spades" alt="" title="6 of spades">
+        <img src="cards/7_of_spades.png" id="7_spades" alt="" title="7 of spades">
+        <img src="cards/8_of_spades.png" id="8_spades" alt="" title="8 of spades">
+        <img src="cards/9_of_spades.png" id="9_spades" alt="" title="9 of spades">
+        <img src="cards/10_of_spades.png" id="10_spades" alt="" title="10 of spades">
+
+        <img src="cards/ace_of_diamonds.png" id="1_diamonds" alt="" title="Ace of diamonds">
+        <img src="cards/2_of_diamonds.png" id="2_diamonds" alt="" title="2 of diamonds">
+        <img src="cards/3_of_diamonds.png" id="3_diamonds" alt="" title="3 of diamonds">
+        <img src="cards/4_of_diamonds.png" id="4_diamonds" alt="" title="4 of diamonds">
+        <img src="cards/5_of_diamonds.png" id="5_diamonds" alt="" title="5 of diamonds">
+        <img src="cards/6_of_diamonds.png" id="6_diamonds" alt="" title="6 of diamonds">
+        <img src="cards/7_of_diamonds.png" id="7_diamonds" alt="" title="7 of diamonds">
+        <img src="cards/8_of_diamonds.png" id="8_diamonds" alt="" title="8 of diamonds">
+        <img src="cards/9_of_diamonds.png" id="9_diamonds" alt="" title="9 of diamonds">
+        <img src="cards/10_of_diamonds.png" id="10_diamonds" alt="" title="10 of diamonds">
+
+        <img src="cards/ace_of_hearts.png" id="1_hearts" alt="" title="Ace of hearts">
+        <img src="cards/2_of_hearts.png" id="2_hearts" alt="" title="2 of hearts">
+        <img src="cards/3_of_hearts.png" id="3_hearts" alt="" title="3 of hearts">
+        <img src="cards/4_of_hearts.png" id="4_hearts" alt="" title="4 of hearts">
+        <img src="cards/5_of_hearts.png" id="5_hearts" alt="" title="5 of hearts">
+        <img src="cards/6_of_hearts.png" id="6_hearts" alt="" title="6 of hearts">
+        <img src="cards/7_of_hearts.png" id="7_hearts" alt="" title="7 of hearts">
+        <img src="cards/8_of_hearts.png" id="8_hearts" alt="" title="8 of hearts">
+        <img src="cards/9_of_hearts.png" id="9_hearts" alt="" title="9 of hearts">
+        <img src="cards/10_of_hearts.png" id="10_hearts" alt="" title="10 of hearts">
+
+        <img src="cards/king_of_clubs.png" id="king_clubs" title="king of clubs">
+        <img src="cards/king_of_spades.png" id="king_spades" title="king of spades">
+        <img src="cards/king_of_diamonds.png" id="king_diamonds" alt="" title="king of diamonds">
+        <img src="cards/king_of_hearts.png" id="king_hearts" alt="" title="king of hearts">
+
+        <img src="cards/jack_of_clubs.png" id="jack_clubs" alt="" title="jack of clubs">
+        <img src="cards/jack_of_spades.png" id="jack_spades" alt="" title="jack of spades">
+        <img src="cards/jack_of_diamonds.png" id="jack_diamonds" alt="" title="jack of diamonds">
+        <img src="cards/jack_of_hearts.png" id="jack_hearts" alt="" title="jack of hearts">
+
+        <img src="cards/queen_of_clubs.png" id="queen_clubs" alt="" title="queen of clubs">
+        <img src="cards/queen_of_spades.png" id="queen_spades" alt="" title="queen of spades">
+        <img src="cards/queen_of_diamonds.png" id="queen_diamonds" alt="" title="queen of diamonds">
+        <img src="cards/queen_of_hearts.png" id="queen_hearts" alt="" title="queen of hearts">
+
+        <img src="cards/joker_red.png" id="colored_joker" alt="" title="colored Joker">
+        <img src="cards/joker_black.png" id="black_joker" alt="" title="black&white Joker ">
+    </div>
+
+</body>
+<footer>
+    <a target="_blank" href="https://icons8.com/icon/f7yaXBeWhSLY/spades">favicon</a> by
+    <a target="_blank" href="https://icons8.com">Icons8</a>
+</footer>
+
+</html>
